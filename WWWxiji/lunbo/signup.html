@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/signup.css"/>
+		<script type="text/javascript" src="js/cookie.js" ></script>
+		<script type="text/javascript" src="js/register.js" ></script>
+	</head>
+	<body>
+		<div class="sigup">
+			<div class="signin-page-wrap">
+				<div class="signup-article">
+					<div class="userSelect">
+						<label for="" class="countryLabel">选择所在国家</label>
+						<select class="country-list">
+					        <option data-icon="ch" value="CH">China</option>
+					        <option data-icon="jp" value="JP">Japan</option>
+					        <option data-icon="ca" value="CA">Canada</option>
+					        <option data-icon="hk" value="HK">Hong Kong</option>
+					        <option data-icon="mo" value="MO">Macao</option>
+					        <option data-icon="tw" value="TW">TaiWan</option>
+					        <option data-icon="us" value="US">USA</option>
+					        <option data-icon="au" value="AU">Australia</option>
+					        <option data-icon="nz" value="NZ">New Zealand</option>
+						</select>
+						<i></i>
+					</div>
+					<div class="chinaUserContent">
+						<form action="" method="post">
+							<!--//账号-->
+							<input type="text" name="username" id="username" value="" placeholder="请输入手机号" class="siguptxt" />
+							<input type="text" name="" id="" value="" placeholder="请输入短信验证码"class="sigupiphone" />
+							<span><span class="sigupduan" >获取短信验证码</span></span>
+							<!--//密码-->
+							<input type="text" name="password" id="password" value="" placeholder="由6-20个字母、数字和符号至少两种的组合" class="siguppassword" />
+							<span>
+								<input type="checkbox" name="" id="" value="" checked="checked"/>
+								<label for="">我已阅读并同意</label><a href="#">注册协议</a>
+							</span>
+							<input type="button" name="" id="register" value="注   册" />
+							已经有会员帐号 <a href="#" id="goLogin">直接登录</a>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+	//验证
+		
+		
+		function Clickinput(classname){
+			var Classname = document.getElementsByClassName(classname)[0];
+			Classname.onfocus = function(){
+				Classname.style.border = "1px solid #f89416"
+			}
+			Classname.onblur = function(){
+				Classname.style.border = "1px solid #d8d8d8"
+			}
+		}
+		Clickinput("siguptxt")
+		Clickinput("sigupiphone")
+		Clickinput("sigupduan")
+		Clickinput("siguppassword")
+		var oUsername = document.getElementById("username");
+		var oPwd = document.getElementById("password");
+		var oregister = document.getElementById("register")
+		
+	</script>
+</html>

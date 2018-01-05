@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/Shoppingpage.css"/>
+		<script src="js/cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/register.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/login.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+	<div class="whole">
+				<!--广告-->
+			<div class="yuyanmo">
+				<div id="site_setting_pop" style="display:block;">
+					<div class="close-btn">X</div>
+					<div class="pop-title">自定义您的购物经历</div>
+				    <div class="pop-inner">
+				        <form action="" method="post" id="pop-local-info">
+				    	<div class="pop-sub-title">请选择您的收货地国家或地区、语言偏好以及交易货币形式。</div>
+				        <div class="pop-sel-title">
+				        	<span class="text">选择收货地国家或地区</span>
+				            <span class="text">选择语言</span>
+				            <span class="text">选择货币形式</span>
+				        </div>
+				        <div class="pop-sel-area clearfix">
+				
+				            <select class="language" name="country">
+				                                <option data-icon = "ch" value="CH" >China</option>
+				                                <option data-icon = "jp" value="JP" >Japan</option>
+				                                <option data-icon = "ca" value="CA" >Canada</option>
+				                                <option data-icon = "hk" value="HK" >Hong Kong</option>
+				                                <option data-icon = "mo" value="MO" >Macao</option>
+				                                <option data-icon = "tw" value="TW" >TaiWan</option>
+				                                <option data-icon = "us" value="US" >USA</option>
+				                                <option data-icon = "au" value="AU" >Australia</option>
+				                                <option data-icon = "nz" value="NZ" >New Zealand</option>
+				                            </select>
+				            <select class="language_lau" name="language">
+				                              <option value="zh_CN"  >简体中文</option>
+				                              <option value="zh_TW"  >繁體中文</option>
+				                              <option value="en_US"  >English</option>
+				                      </select>
+				            <select class="language_money" name="currency">
+				                                    <option value="CNY"  >CNY（￥）</option>
+				                                    <option value="USD"  >USD（$）</option>
+				                                    <option value="JPY"  >JPY（¥）</option>
+				                                    <option value="CAD"  >CAD（C$）</option>
+				                                    <option value="HKD"  >HKD（H$）</option>
+				                                    <option value="MOP"  >MOP（MOP$）</option>
+				                                    <option value="TWD"  >TWD（NT$）</option>
+				                                    <option value="NZD"  >NZD（NZ$）</option>
+				                                    <option value="AUD"  >AUD（A$）</option>
+				                            </select>
+				
+				
+				        </div>
+				        
+				        <button type="button" id="yuyan_btn" class="btn pop-setting-save" rel="_request"><span><span>保存使用偏好</span></span></button>      
+				        </form>
+				  </div>
+				</div>
+			</div>
+			 <div id="static_topBar" style="height:80px;cursor:pointer;background:url(img/tburl.jpg) top center no-repeat;text-indent: -9999px;"></div>
+				 <!--头部-->
+			 <div class="Header">
+			 	<div class="Header-one">
+					<header>
+						<a href="index.html" style="float: left; margin-right:10px ;"> < 返回主页</a>
+						<span style="float:left;">配送至：</span>
+					    <ul>
+					    	<li class="Chinnaicon btnicon"><a href="#"><img src="img/Chinnaicon.jpg.png"/></a></li>
+					    	<li class="btnicon"><a href="#">CHS</a></li>
+					    	<li class="btnicon"><a href="#">CNY</a></li>
+					    </ul>
+					    
+					    <ul>
+					    	<li><a href="#">集团采购</a></li>
+					    	<li><a href="#">商家入驻</a></li>
+					    	<li><a href="#">客户服务</a>
+					    		<ul class="Customer">
+					    			<li><a href="#">在线客服</a></li>
+					    			<li><a href="#">帮助中心</a></li>
+					    		</ul>
+					    	</li>
+					    </ul>
+					</header>
+				</div>
+			</div>
+				<script type="text/javascript">
+			 		window.onload = function(){
+			 			let Btnicon = document.getElementsByClassName("btnicon");
+			 			let Btnstyle = document.getElementsByClassName("yuyanmo")[0];
+			 			for(let i = 0;i<Btnicon.length;i++){
+				 				Btnicon[i].onclick = function(){
+				 				Btnstyle.style.display = "block"
+				 			}
+			 			}
+			 			document.getElementsByClassName("close-btn")[0].onclick = function(){
+			 					Btnstyle.style.display = "none"
+			 			}
+			 		}
+			 	</script>
+			 	
+			 	<nav>
+			 		<div class="Navtop">
+			 			<div class="Navtop-one">
+					 		<div class="nav_top">
+						 		<h1><img src="img/log.png"/></h1>
+						 		<div class="searchbar-float">
+								    <form action="#" method="post" id="searchbar-form">
+								    	<input class="txt-input-float" type="text" name="search_input" placeholder="GUCCI" /><!--
+									 --><input type="button" class="btn-search-float"></input>
+								    </form>
+							    	<div class="hots">
+								        <a href="#">施华洛世奇</a>
+								        <a href="#">剑桥包</a>
+								        <a href="#">新秀丽</a>
+								        <a href="#">床垫</a>
+								        <a href="#">BOSE</a>
+								        <a href="#">Tory Burch</a>
+								        <a href="#">MK</a>
+								        <a href="#">TUMI</a>
+								        <a href="#">OTAFUKU</a>
+							      </div>
+								</div>
+								<div class="userpassword">
+									<div class="login_user">
+										<a href="Login.html">登录</a>
+										<a href="signup.html">注册</a>
+									</div>
+									<div class="signin-box" id="signin-box">
+							            <a href="Login.html" class="login-btn">登录</a>
+							            <p>不是会员？</p>
+							            <a href="signup.html" class="signup-btn">立即注册</a>
+							        </div>
+								</div>
+								<div class="minicart">
+									<p style="font-size: 14px; line-height: 44px;text-align: left; margin-left: 50px;"><a href="shopcart.html">购物车</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<script type="text/javascript">
+//						cookie获取用户信息
+						
+						let Login_user = document.getElementsByClassName("userpassword")[0];
+						let Signinbox = document.getElementsByClassName("signin-box")[0];
+						let Userpassword = document.getElementsByClassName("userpassword")[0];
+						let H1 = document.getElementsByTagName("h1")[0];
+						var Loginuser = document.getElementsByClassName("login_user")[0]
+						
+						//将字符串转为对象
+						if(getCookie("douyongchao_loginedUsers")){
+							var users = getCookie("douyongchao_loginedUsers");
+							var usersN = users.substr(0,4)
+							console.log(usersN)
+							Loginuser.innerHTML = "您好，"+usersN+".."+"<span> | 退出</span>"
+							Loginuser.style.paddingLeft = "50px"
+							Loginuser.children[0].style.cursor = "pointer"
+							Loginuser.children[0].style.color = "blue"
+							console.log(users)
+							Loginuser.children[0].onclick = function(){
+								alert("退出成功!")
+								removeCookie("douyongchao_loginedUsers")
+								location.reload()
+							}
+						}else{
+							
+								Login_user.onmouseover = function(){
+									Signinbox.style.display = "block"
+									Userpassword.style.background = "white"
+									Userpassword.style.border=" 1px solid #e3e3e3";
+									Userpassword.style.zIndex ="999"
+									sport(Userpassword,{height:164});
+								}
+								Login_user.onmouseout = function(){
+									Signinbox.style.display = "none"
+									Userpassword.style.background = "#f5f5f5"
+									Userpassword.style.border="none";
+									sport(Userpassword,{height:35});
+								}
+						}
+						let Nav_top  = document.getElementsByClassName("Navtop")[0];
+								window.onscroll = function(){
+									var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+									if(scrollTop > 850){
+										Nav_top.style.position = "fixed";
+										Nav_top.style.top ="-23px";
+										Nav_top.style.background = "#f5f5f5"
+										Nav_top.style.height = "97px"
+										Nav_top.style.boxShadow = "0px 4px 5px rgba(0, 0, 0, 0.2)";
+										H1.style.margin = "30px"
+										Nav_top.style.overflow = "hidden"
+									}else{
+										Nav_top.style.position = "";
+										Nav_top.style.background = "#f5f5f5"
+										Nav_top.style.height = "145px"
+										Nav_top.style.boxShadow = "none"
+										H1.style.marginTop = "47px"
+										Nav_top.style.overflow = ""
+									}
+								}
+					</script>
+					<div class="Nav_bottom">
+						<div class="Nav_bottom-one">
+							<div class="nav_bottom">
+								<div class="nav_bottom_left">
+									<p>全部分类</p>
+								</div>
+								<div class="nav_bottom_right">
+									<ul>
+										<li><a href="#">超值特惠</a></li>
+										<li><a href="#"></a></li>
+										<li><a href="#">国家地区馆</a></li>
+										<li><a href="#">品牌</a></li>
+										<li><a href="#">精品家居馆</a></li>
+										<li><a href="#">留学·旅游</a></li>
+									</ul>
+								</div>
+							</div>	
+						</div>
+					</div>
+				</nav>
+				<!--中间部分-->
+				<section>
+					<div class="ShopSectionTop">
+						<input type="hidden" value="1" class="Shop_ID">
+						<div class="shopSectionTop">
+							<div class="FangdajingShop">
+								<div class="pro_brand">
+									<img src="img/shopFangdajing.jpg"/>
+								</div>
+								<div class="smallPic">
+									<span class="float_layer"></span>
+									<div class="shopsmallImg">
+										<a href="#">
+											<img src="img/bigImg.jpg"/>
+										</a>
+									</div>
+								</div>	
+								<div class="shopsmallImg_bottom">
+									<a href="javascript:;"><img src="img/pro_icon05.png"/></a>
+									<a href="#">
+										<img src="img/bigImg.jpg"/>
+									</a>
+									<a href="javascript:;"><img src="img/pro_icon06.png"/></a>
+								</div>
+							</div>
+							
+							<div class="fangdajingbigImg">
+								<img src="img/bigImg.jpg" class="BigImg"/>
+							</div>
+							<div class="product_information">
+								<div class="product_information-top">
+									<div class="xj-icon">
+										<span>自营</span>
+									</div>
+									<div class="product-titles">
+										<div class="product-titles-inner">
+											<h1>【包邮】Kirkland Signature 科克兰/柯克兰 无盐原味混合坚果仁 1130g</h1>
+										</div>
+									</div>
+									<div class="xj_brief_outbox">
+										
+                    科克兰（Kirkland Signature）无盐原味混合坚果仁，每罐1130g，包括腰果、杏仁、开心果、碧根果四种。坚果是植物的精华部分，一般都营养丰富，所含有的蛋白质、油脂、矿物质、维生素较高，对人体生长发育，增强体质，预防疾病有较好的功效。                
+									</div>
+									<div class="shopULLI">
+										<ul>
+											<li>
+												<span>价格</span>
+												<u class="shopPagePrice"><i>￥</i>179.00</u>
+												<s>￥205.00</s>
+											</li>
+											<li>
+												<span>优惠</span>
+												<u>包邮</u>
+											</li>
+											<li>
+												<span>品牌</span>
+												<u><a href="#">Kirkland Signature/科克兰</a></u>
+											</li>
+											<li>
+												<span>发货地</span>
+												<u> 美国采购中国直邮 </u>
+											</li>
+											<li>
+												<span>配送至</span>
+												<u>
+													<select name="">
+														<option data-icon = "ch" value="CH" >China</option>
+						                                <option data-icon = "jp" value="JP" >Japan</option>
+						                                <option data-icon = "ca" value="CA" >Canada</option>
+						                                <option data-icon = "hk" value="HK" >Hong Kong</option>
+						                                <option data-icon = "mo" value="MO" >Macao</option>
+													</select>
+												</u>
+												
+											</li>
+											<li>
+												<span>重量</span>
+												<u>
+													1200g
+												</u>
+											</li>
+											<li>
+												<span>数量</span>
+				<!-----------------------购物车数量----------------------->
+												<u class="pageMathshop"><span>+</span><i class="shopMath">1</i><span>-</span></u>
+											</li>
+											<li>
+												<p>请注意 该商品保质期至2018年2月。</p>
+											</li>
+										</ul>
+										<div class="shopBtn">
+											<li>
+											立即购买
+											</li>
+											<li>
+												<span>联系客服</span>
+												<span>分享</span>
+											</li>
+											<li class="addCart">
+											加入购物车
+											</li>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="shopshoucang">
+								<img src="img/shoucang.png"/>
+							</div>
+						</div>
+					</div>
+					
+					<!------------------------------购物车-------------------------------------------->
+					<script type="text/javascript">
+						var users = getCookie("douyongchao_loginedUsers")
+//						获取按钮信息
+						var oShoppageUL = document.getElementsByClassName("pageMathshop")[0]
+						var oShopUp = oShoppageUL.firstChild;
+						var oShopDown= oShoppageUL.lastChild;
+						var oShopShowMath = document.getElementsByClassName("shopMath")[0];
+						var PageMathIndex = 0;
+						var oAddCart= document.getElementsByClassName("addCart")[0]
+//						获取商品信息
+						//商品ID
+						var oShop_ID = document.getElementsByClassName("Shop_ID")[0].value
+						//商品名
+						var oShoppageName= document.getElementsByClassName("product-titles-inner")[0].children[0].innerHTML
+						//商品价格
+						var oShoppagePrice = document.getElementsByClassName("shopPagePrice")[0].lastChild.nodeValue
+						//商品图片
+						var oShoppageImg = document.getElementsByClassName("shopsmallImg")[0].children[0].children[0].src
+						//商品数量
+						console.log(oShoppageName)
+						console.log(oShoppagePrice)
+						console.log(oShoppageImg)
+						console.log(oShop_ID)
+//						获取按钮点击事件
+						oShopUp.onclick = function(){
+							PageMathIndex++;
+							oShopShowMath.innerHTML = PageMathIndex;
+						}
+						oShopDown.onclick = function(){
+							PageMathIndex--;
+							if(PageMathIndex <=0){
+								PageMathIndex=1;
+							}
+							oShopShowMath.innerHTML = PageMathIndex;
+						}
+//设置cookie-------------------------------------------------------------------------------------------						
+						
+					oAddCart.onclick = function(){
+		    			var cookieValue = '{"id":'+oShop_ID+',"name":"'+oShoppageName+'","price":'+oShoppagePrice+',"num":'+PageMathIndex+',"img":"'+oShoppageImg+'"}';
+		    			
+		    			setCookie(users + oShop_ID,cookieValue,7);
+		    			//console.log(getCookie('1231'))
+		    		}
+	
+						
+					</script>
+					
+					
+					
+					
+				<!---------------------------详情介绍以及相关商品--------------------------->
+					<div class="product-clearfix">
+						<div class="xj_store">
+    						<div class="xj_store_nav">
+    								<ul>
+    									<li><a href="#">精品</a></li>
+    									<li><a href="#">促销</a></li>
+    								</ul>
+    						</div>
+    						<div class="xj_store_navlist">
+    							<ul>
+    								<li>
+    									<img src=""/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src=""/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src=""/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src=""/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src=""/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src=""/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src=""/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src=""/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    							</ul>
+    						</div>
+    						<div class="xj_store_navlist">
+    							<ul>
+    								<li>
+    									<img src=""/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥240.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src=""/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥240.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src=""/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥340.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src=""/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src=""/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src=""/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src=""/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src=""/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    							</ul>
+    						</div>
+    					</div>
+    					<script type="text/javascript">
+    						var oXj_store_nav = document.getElementsByClassName("xj_store_nav")[0].children[0].children;
+	    						var ostoreDl = document.getElementsByClassName("xj_store_navlist");
+	    						for(var j = 0;j<oXj_store_nav.length;j++){
+	    							ostoreDl[j].style.display = "none"
+	    							ostoreDl[0].style.display = "block"
+	    							oXj_store_nav[0].style.background="#fff"
+	    							oXj_store_nav[0].style.borderTop="1px solid #EB5A41";
+	    							oXj_store_nav[0].style.borderBottom="1px solid #fff";
+	    							oXj_store_nav[0].children[0].style.color = "#EB5A41"
+	    							oXj_store_nav[j].index = j;
+	    							
+	    							oXj_store_nav[j].onmouseover=function(){
+	    								for(var k=0;k<ostoreDl.length;k++){
+	    									ostoreDl[k].style.display = "none"
+	    									oXj_store_nav[k].style.background="#EBEBEB";
+	    									oXj_store_nav[k].children[0].style.color = "#666"
+	    									oXj_store_nav[k].style.borderTop="1px solid #EBEBEB";
+	    									oXj_store_nav[k].style.borderBottom="1px solid #1A1A1A";
+	    								}
+	    								ostoreDl[this.index].style.display = "block";
+	    								oXj_store_nav[this.index].style.background="#fff"
+	    								oXj_store_nav[this.index].style.borderTop="1px solid #EB5A41";
+	    								oXj_store_nav[this.index].style.borderBottom="1px solid #fff";
+	    								oXj_store_nav[this.index].children[0].style.color = "#EB5A41"
+	    							}
+	    						}
+    					</script>
+						<div class="product_detail">
+							<h2><span>商品详情</span></h2>
+							<div class="detail-content">
+								<img src="img/shopImg (2).jpg"/>
+								<img src="img/shopImg (1).jpg"/>
+								<img src="img/shopImg (4).jpg"/>
+								<img src="img/shopImg (3).jpg"/>
+								<img src="img/shopImg (5).jpg"/>
+								<img src="img/shopImg (3).jpg"/>
+								<img src="img/shopImg (5).jpg"/>
+								<img src="img/shopImg.jpg"/>
+							</div>
+						</div>
+					</div>
+				</section>
+				<script type="text/javascript">
+					let oSmallPic = document.getElementsByClassName("smallPic")[0];
+					let oFloat = document.getElementsByClassName("float_layer")[0];
+					let oFangdajingbigImg = document.getElementsByClassName("fangdajingbigImg")[0]
+					let oShopsmallImg = document.getElementsByClassName("shopsmallImg")[0]
+					let oBigImg = document.getElementsByClassName('BigImg')[0];
+					oSmallPic.onmouseover = function(){
+						oFloat.style.display = "block"
+						oFangdajingbigImg.style.display = "block"
+					}
+					oSmallPic.onmouseout = function(){
+						oFloat.style.display = "none"
+						oFangdajingbigImg.style.display = "none"
+					}
+					oSmallPic.onmousemove = function(evt){
+						var e= evt || window.event;
+						var l = e.pageX - oShopsmallImg.offsetLeft - oSmallPic.offsetLeft - oFloat.offsetWidth / 2;
+						var t = e.pageY - oShopsmallImg.offsetTop - oSmallPic.offsetTop - oFloat.offsetHeight / 2;
+						if(l<=0){
+							l=0;
+						}else if(l > oSmallPic.offsetWidth - oFloat.offsetWidth){
+							l=oSmallPic.offsetWidth - oFloat.offsetWidth;
+						}
+						if(t <= 0){
+							t=0;
+						}else if(t > oSmallPic.offsetHeight - oFloat.offsetHeight){
+							t= oSmallPic.offsetHeight - oFloat.offsetHeight
+						}
+						oFloat.style.left = l +"px"
+						oFloat.style.top = t +"px"
+						
+						var Bl = l/(oSmallPic.offsetWidth)
+						var Bt = t/(oSmallPic.offsetHeight)
+						oBigImg.style.left =- Bl*(oBigImg.offsetWidth-oShopsmallImg.offsetWidth) +"px"
+						oBigImg.style.top = - Bt*(oBigImg.offsetHeight-oShopsmallImg.offsetHeight) +"px"
+					}
+				</script>
+				<!--尾部-->
+			<footer>
+					<div class="info-footer-inner">
+						<div class="left-box">
+							<dl>
+								<dt>购物指南</dt>
+								<dd><a href="#">购物下单</a></dd>
+								<dd><a href="#">关税清关</a></dd>
+								<dd><a href="#">站内优惠</a></dd>
+								<dd><a href="#">积分说明</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="#">物流配送</a></dt>
+								<dd><a href="#">购物下单</a></dd>
+								<dd><a href="#">购物下单</a></dd>
+								<dd><a href="#">积分说明</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="#">售后服务</a></dt>
+								<dd><a href="#">购物下单</a></dd>
+								<dd><a href="#">购物下单</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="#">常见问题</a></dt>
+								<dd><a href="#">购物下单</a></dd>
+								<dd><a href="#">积分说明</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="#">关于我们</a></dt>
+								<dd><a href="#">关税清关</a></dd>
+								<dd><a href="#">站内优惠</a></dd>
+								<dd><a href="#">积分说明</a></dd>
+								<dd><a href="#">关税清关</a></dd>
+								<dd><a href="#">站内优惠</a></dd>
+								<dd><a href="#">积分说明</a></dd>
+								<dd><a href="#">关税清关</a></dd>
+								<dd><a href="#">站内优惠</a></dd>
+							</dl>
+							
+						</div>
+						<div class="create-rightbox">
+							<div class="tit-box">
+								海外运营中心
+							</div>
+							<p>香港运营中心:<img src="http://img2.helper-sys.com/themes/ecstore/images/index_161107/mail_serive_hk_170526.png"/></p>
+							<p>北美运营中心:<img src="http://img2.helper-sys.com/themes/ecstore/images/index_161107/mail_serive_hk_170526.png"/></p>
+							<p>日本运营中心：<img src="http://img2.helper-sys.com/themes/ecstore/images/index_161107/mail_serive_hk_170526.png"/></p>
+							<p>欧洲运营中心：<img src="http://img2.helper-sys.com/themes/ecstore/images/index_161107/mail_serive_hk_170526.png"/></p>
+							<p>香港运营中心:<img src="http://img2.helper-sys.com/themes/ecstore/images/index_161107/mail_serive_hk_170526.png"/></p>
+							
+							<div class="tit-box2">
+								中国大陆运营中心
+							</div>
+							<p>在线客服:<img src="http://img2.helper-sys.com/themes/ecstore/images/index_161107/mail_serive_hk_170526.png"/></p>
+							<p>客服热线:<img src="http://img2.helper-sys.com/themes/ecstore/images/index_161107/mail_serive_hk_170526.png"/></p>
+							<p>工作时间：<img src="http://img2.helper-sys.com/themes/ecstore/images/index_161107/mail_serive_hk_170526.png"/></p>
+							
+						</div>
+						<div class="right-box">
+								<p>扫码下载客户端</p>
+								<a href="#"><img src="img/app_download.png"/></a>
+						</div>
+					</div>
+					
+				</footer>
+				</div>	
+				<div class="Footer-bottom">
+				<div class="footer-box">
+					<div class="footer-inner">
+						<p>Copyright © 2017 XIJI Hongkong Co., Ltd xiji.com 保留一切权利。 京ICP备14062442号 | </p>
+						<p>
+							<a href="#"><img src="http://img3.helper-sys.com//image/6ca43cb489eb3cd581037f57bb2fb1dee9414022.gif?1465144001#w"/></a>
+							<a href="#"><img src="http://img2.helper-sys.com//image/547b48b9c16dbc00ac8163259c326f7ae7bf2cf3.gif?1465143405#w"/></a>
+							<a href="#"><img src="http://img1.helper-sys.com//image/694508.png?1425468231#w"/></a>
+							<a href="#"><img src="http://img1.helper-sys.com//image/a77f0a.png?1425468249#w"/></a>
+						</p>
+					</div>
+				</div>
+				</div>	
+	</body>
+	<script src="js/sport.js" type="text/javascript" charset="utf-8"></script>
+</html>

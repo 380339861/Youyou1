@@ -1,0 +1,2762 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="js/ajax.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/tools.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/banner.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/sport.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/cookie.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/register.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/login.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+	<div class="whole">
+			<div class="yuyanmo">
+				<div id="site_setting_pop" style="display:block;">
+					<div class="close-btn">X</div>
+					<div class="pop-title">自定义您的购物经历</div>
+				    <div class="pop-inner">
+				        <form action="" method="post" id="pop-local-info">
+				    	<div class="pop-sub-title">请选择您的收货地国家或地区、语言偏好以及交易货币形式。</div>
+				        <div class="pop-sel-title">
+				        	<span class="text">选择收货地国家或地区</span>
+				            <span class="text">选择语言</span>
+				            <span class="text">选择货币形式</span>
+				        </div>
+				        <div class="pop-sel-area clearfix">
+				
+				            <select class="language" name="country">
+				                                <option data-icon = "ch" value="CH" >China</option>
+				                                <option data-icon = "jp" value="JP" >Japan</option>
+				                                <option data-icon = "ca" value="CA" >Canada</option>
+				                                <option data-icon = "hk" value="HK" >Hong Kong</option>
+				                                <option data-icon = "mo" value="MO" >Macao</option>
+				                                <option data-icon = "tw" value="TW" >TaiWan</option>
+				                                <option data-icon = "us" value="US" >USA</option>
+				                                <option data-icon = "au" value="AU" >Australia</option>
+				                                <option data-icon = "nz" value="NZ" >New Zealand</option>
+				                            </select>
+				            <select class="language_lau" name="language">
+				                              <option value="zh_CN"  >简体中文</option>
+				                              <option value="zh_TW"  >繁體中文</option>
+				                              <option value="en_US"  >English</option>
+				                      </select>
+				            <select class="language_money" name="currency">
+				                                    <option value="CNY"  >CNY（￥）</option>
+				                                    <option value="USD"  >USD（$）</option>
+				                                    <option value="JPY"  >JPY（¥）</option>
+				                                    <option value="CAD"  >CAD（C$）</option>
+				                                    <option value="HKD"  >HKD（H$）</option>
+				                                    <option value="MOP"  >MOP（MOP$）</option>
+				                                    <option value="TWD"  >TWD（NT$）</option>
+				                                    <option value="NZD"  >NZD（NZ$）</option>
+				                                    <option value="AUD"  >AUD（A$）</option>
+				                            </select>
+				
+				
+				        </div>
+				        
+				        <button type="button" id="yuyan_btn" class="btn pop-setting-save" rel="_request"><span><span>保存使用偏好</span></span></button>      
+				        </form>
+				  </div>
+				</div>
+			</div>
+			 <div id="static_topBar" style="height:80px;cursor:pointer;background:url(img/tburl.jpg) top center no-repeat;text-indent: -9999px;"></div>
+			 <div class="Header">
+			 	<div class="Header-one">
+					<header>
+						<span style="float:left;">配送至：</span>
+					    <ul>
+					    	<li class="Chinnaicon btnicon"><a href="#"><img src="img/Chinnaicon.jpg.png"/></a></li>
+					    	<li class="btnicon"><a href="#">CHS</a></li>
+					    	<li class="btnicon"><a href="#">CNY</a></li>
+					    </ul>
+					    
+					    <ul>
+					    	<li><a href="#">集团采购</a></li>
+					    	<li><a href="#">商家入驻</a></li>
+					    	<li><a href="#">客户服务</a>
+					    		<ul class="Customer">
+					    			<li><a href="#">在线客服</a></li>
+					    			<li><a href="#">帮助中心</a></li>
+					    		</ul>
+					    	</li>
+					    </ul>
+					</header>
+				</div>
+			</div>
+				<script type="text/javascript">
+			 		window.onload = function(){
+			 			let Btnicon = document.getElementsByClassName("btnicon");
+			 			let Btnstyle = document.getElementsByClassName("yuyanmo")[0];
+			 			for(let i = 0;i<Btnicon.length;i++){
+				 				Btnicon[i].onclick = function(){
+				 				Btnstyle.style.display = "block"
+				 			}
+			 			}
+			 			document.getElementsByClassName("close-btn")[0].onclick = function(){
+			 					Btnstyle.style.display = "none"
+			 			}
+			 		}
+			 	</script>
+			 	
+			 	<nav>
+			 		<div class="Navtop">
+			 			<div class="Navtop-one">
+					 		<div class="nav_top">
+						 		<h1><img src="img/log.png"/></h1>
+						 		<div class="searchbar-float">
+								    <form action="#" method="post" id="searchbar-form">
+								    	<input class="txt-input-float" type="text" name="search_input" placeholder="GUCCI" /><!--
+									 --><input type="button" class="btn-search-float"></input>
+								    </form>
+							    	<div class="hots">
+								        <a href="#">施华洛世奇</a>
+								        <a href="#">剑桥包</a>
+								        <a href="#">新秀丽</a>
+								        <a href="#">床垫</a>
+								        <a href="#">BOSE</a>
+								        <a href="#">Tory Burch</a>
+								        <a href="#">MK</a>
+								        <a href="#">TUMI</a>
+								        <a href="#">OTAFUKU</a>
+							      </div>
+								</div>
+								<div class="userpassword">
+									<div class="login_user">
+										<a href="Login.html">登录</a>
+										<a href="signup.html">注册</a>
+									</div>
+									<div class="signin-box" id="signin-box">
+							            <a href="Login.html" class="login-btn">登录</a>
+							            <p>不是会员？</p>
+							            <a href="signup.html" class="signup-btn">立即注册</a>
+							        </div>
+								</div>
+								<div class="minicart">
+									<p style="font-size: 14px; line-height: 44px;text-align: left; margin-left: 50px;"><a href="shopcart.html">购物车</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<script type="text/javascript">
+//						cookie获取用户信息
+						
+						let Login_user = document.getElementsByClassName("userpassword")[0];
+						let Signinbox = document.getElementsByClassName("signin-box")[0];
+						let Userpassword = document.getElementsByClassName("userpassword")[0];
+						let H1 = document.getElementsByTagName("h1")[0];
+						var Loginuser = document.getElementsByClassName("login_user")[0]
+						//将字符串转为对象
+						if(getCookie("douyongchao_loginedUsers")){
+							var users = getCookie("douyongchao_loginedUsers");
+							var usersN = users.substr(0,4)
+							console.log(usersN)
+							Loginuser.innerHTML = "您好，"+usersN+".."+"<span> | 退出</span>"
+							
+							Loginuser.style.paddingLeft = "50px"
+							Loginuser.children[0].style.cursor = "pointer"
+							Loginuser.children[0].style.color = "blue"
+							console.log(users)
+							Loginuser.children[0].onclick = function(){
+								alert("退出成功!")
+								removeCookie("douyongchao_loginedUsers")
+								location.reload()
+							}
+						}else{
+							
+								Login_user.onmouseover = function(){
+									Signinbox.style.display = "block"
+									Userpassword.style.background = "white"
+									Userpassword.style.border=" 1px solid #e3e3e3";
+									Userpassword.style.zIndex ="999"
+									sport(Userpassword,{height:164});
+								}
+								Login_user.onmouseout = function(){
+									Signinbox.style.display = "none"
+									Userpassword.style.background = "#f5f5f5"
+									Userpassword.style.border="none";
+									sport(Userpassword,{height:35});
+								}
+						}
+						let Nav_top  = document.getElementsByClassName("Navtop")[0];
+								window.onscroll = function(){
+									var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+									if(scrollTop > 850){
+										Nav_top.style.position = "fixed";
+										Nav_top.style.top ="-23px";
+										Nav_top.style.background = "#f5f5f5"
+										Nav_top.style.height = "97px"
+										Nav_top.style.boxShadow = "0px 4px 5px rgba(0, 0, 0, 0.2)";
+										H1.style.margin = "30px"
+										Nav_top.style.overflow = "hidden"
+									}else{
+										Nav_top.style.position = "";
+										Nav_top.style.background = "#f5f5f5"
+										Nav_top.style.height = "145px"
+										Nav_top.style.boxShadow = "none"
+										H1.style.marginTop = "47px"
+									}
+								}
+					</script>
+					<div class="Nav_bottom">
+						<div class="Nav_bottom-one">
+							<div class="nav_bottom">
+								<div class="nav_bottom_left">
+									<p>全部分类</p>
+								</div>
+								<div class="create_box">
+									<ul class="create_box_shop">
+										<ul>
+											<li class="create_box_shop1">
+												<div>
+													<a href="detailPage.html">服饰鞋包</a>
+													<ul>
+														<li><a href="detailPage.html">潮流箱包</a> |</li>
+														<li><a href="">女表</a> |</li>
+														<li><a href="">时尚饰品</a></li>
+													</ul>
+												</div>
+											</li>
+											<li class="create_box_shop1">
+												<div>
+													<a href="detailPage.html">服饰鞋包</a>
+													<ul>
+														<li><a href="detailPage.html">面部护理</a> |</li>
+														<li><a href="">彩妆香水</a> |</li>
+														<li><a href="">女士香水</a></li>
+													</ul>
+												</div>
+											</li>
+											<li class="create_box_shop1">
+												<div>
+													<a href="detailPage.html">服饰鞋包</a>
+													<ul>
+														<li><a href="detailPage.html">潮流箱包</a> |</li>
+														<li><a href="">女表</a> |</li>
+														<li><a href="">时尚饰品</a></li>
+													</ul>
+												</div>
+											</li>
+											<li class="create_box_shop1">
+												<div>
+													<a href="#">服饰鞋包</a>
+													<ul>
+														<li><a href="">潮流箱包</a> |</li>
+														<li><a href="">女表</a> |</li>
+														<li><a href="">时尚饰品</a></li>
+													</ul>
+												</div>
+											</li>
+											<li class="create_box_shop1">
+												<div>
+													<a href="#">服饰鞋包</a>
+													<ul>
+														<li><a href="">潮流箱包</a> |</li>
+														<li><a href="">女表</a> |</li>
+														<li><a href="">时尚饰品</a></li>
+													</ul>
+												</div>
+											</li>
+											<li class="create_box_shop1">
+												<div>
+													<a href="#">服饰鞋包</a>
+													<ul>
+														<li><a href="">潮流箱包</a> |</li>
+														<li><a href="">女表</a> |</li>
+														<li><a href="">时尚饰品</a></li>
+													</ul>
+												</div>
+											</li>
+											<li class="create_box_shop1">
+												<div>
+													<a href="#">服饰鞋包</a>
+													<ul>
+														<li><a href="">潮流箱包</a> |</li>
+														<li><a href="">女表</a> |</li>
+														<li><a href="">时尚饰品</a></li>
+													</ul>
+												</div>
+											</li>
+											<li class="create_box_shop1">
+												<div>
+													<a href="#">服饰鞋包</a>
+													<ul>
+														<li><a href="">潮流箱包</a> |</li>
+														<li><a href="">女表</a> |</li>
+														<li><a href="">时尚饰品</a></li>
+													</ul>
+												</div>
+											</li>
+										</ul>
+									</ul>
+								</div>
+								
+									
+								
+								<div class="create_box_right">
+									<ul>
+										<li class="create_box_right_ul">
+												<div>
+													<a href="#">服饰鞋包</a>
+													<ul>
+														<li><a href="">潮流箱包</a> |</li>
+														<li><a href="">女表</a> |</li>
+														<li><a href="">时尚饰品</a></li>
+													</ul>
+												</div>
+											</li>
+											<li class="create_box_right_ul">
+												<div>
+													<a href="#">服饰鞋包</a>
+													<ul>
+														<li><a href="">面部护理</a> |</li>
+														<li><a href="">彩妆香水</a> |</li>
+														<li><a href="">女士香水</a></li>
+													</ul>
+												</div>
+											</li>
+											<li class="create_box_right_ul">
+												<div>
+													<a href="#">服饰鞋包</a>
+													<ul>
+														<li><a href="">潮流箱包</a> |</li>
+														<li><a href="">女表</a> |</li>
+														<li><a href="">时尚饰品</a></li>
+													</ul>
+												</div>
+											</li>
+											<li class="create_box_right_ul">
+												<div>
+													<a href="#">服饰鞋包</a>
+													<ul>
+														<li><a href="">潮流箱包</a> |</li>
+														<li><a href="">女表</a> |</li>
+														<li><a href="">时尚饰品</a></li>
+													</ul>
+												</div>
+											</li>
+											<li class="create_box_right_ul">
+												<div>
+													<a href="#">服饰鞋包</a>
+													<ul>
+														<li><a href="">潮流箱包</a> |</li>
+														<li><a href="">女表</a> |</li>
+														<li><a href="">时尚饰品</a></li>
+													</ul>
+												</div>
+											</li>
+											<li class="create_box_right_ul">
+												<div>
+													<a href="#">服饰鞋包</a>
+													<ul>
+														<li><a href="">潮流箱包</a> |</li>
+														<li><a href="">女表</a> |</li>
+														<li><a href="">时尚饰品</a></li>
+													</ul>
+												</div>
+											</li>
+											<li class="create_box_right_ul">
+												<div>
+													<a href="#">服饰鞋包</a>
+													<ul>
+														<li><a href="">潮流箱包</a> |</li>
+														<li><a href="">女表</a> |</li>
+														<li><a href="">时尚饰品</a></li>
+													</ul>
+												</div>
+											</li>
+											<li class="create_box_right_ul">
+												<div>
+													<a href="#">服饰鞋包</a>
+													<ul>
+														<li><a href="">潮流箱包</a> |</li>
+														<li><a href="">女表</a> |</li>
+														<li><a href="">时尚饰品</a></li>
+													</ul>
+												</div>
+											</li>
+									</ul>
+									<ul>
+										<li>2</li>
+									</ul>
+									<ul>
+										<li>3</li>
+									</ul>
+									<ul>
+										<li>4</li>
+									</ul>
+									<ul>
+										<li>5</li>
+									</ul>
+									<ul>
+										<li>6</li>
+									</ul>
+									<ul>
+										<li>7</li>
+									</ul>
+									<ul>
+										<li>8</li>
+									</ul>
+								</div>
+								<script type="text/javascript">
+									let OULLIcreate_box_left = document.getElementsByClassName("create_box_shop1");
+									let OULLIcreate_box_Right = document.getElementsByClassName("create_box_right")[0]
+									let OULLIcreate_box_right = document.getElementsByClassName("create_box_right")[0].children;
+		//							console.log(OULLIcreate_box_right)
+									for(let i = 0;i<OULLIcreate_box_left.length;i++){
+										var that = this;
+										OULLIcreate_box_right[i].style.display = "none";
+										OULLIcreate_box_left[i].index = i;
+										OULLIcreate_box_right[i].index = i;
+										OULLIcreate_box_left[i].onmouseover = function(){
+											OULLIcreate_box_Right.style.display = "block";
+											OULLIcreate_box_right[this.index].style.display = "block";
+										}
+										OULLIcreate_box_left[i].onmousemove = function(){
+											OULLIcreate_box_Right.style.display = "block";
+											OULLIcreate_box_right[this.index].style.display = "block";
+										}
+										OULLIcreate_box_right[i].onmousemove = function(){
+											OULLIcreate_box_Right.style.display = "block";
+											OULLIcreate_box_right[this.index].style.display = "block";
+										}
+										OULLIcreate_box_right[i].onmouseout = function(){
+											OULLIcreate_box_Right.style.display = "none";
+											OULLIcreate_box_right[i].style.display = "none";
+										}
+										OULLIcreate_box_left[i].onmouseout = function(){
+											OULLIcreate_box_Right.style.display = "none";
+											OULLIcreate_box_right[i].style.display = "none";
+										}
+									}
+									
+								</script>
+								<div class="nav_bottom_right">
+									<ul>
+										<li><a href="#">超值特惠</a></li>
+										<li><a href="#"></a></li>
+										<li><a href="#">国家地区馆</a></li>
+										<li><a href="#">品牌</a></li>
+										<li><a href="#">精品家居馆</a></li>
+										<li><a href="#">留学·旅游</a></li>
+									</ul>
+								</div>
+							</div>	
+						</div>
+					</div>
+					
+					
+				</nav>
+				
+				<div class="Section">
+					<div class="Section-one">
+				<div class="container" id="slide1">
+					<ul>
+						<li><a href="#"><img src="img/ban (1).png"/></a></li>
+						<li><a href="#"><img src="img/ban (2).png"/></a></li>
+						<li><a href="#"><img src="img/ban (3).png"/></a></li>
+						<li><a href="#"><img src="img/ban (4).png"/></a></li>
+						<li><a href="#"><img src="img/ban (5).png"/></a></li>
+						<li><a href="#"><img src="img/ban (6).png"/></a></li>
+						<li><a href="#"><img src="img/ban (3).png"/></a></li>
+						<li><a href="#"><img src="img/ban (4).png"/></a></li>
+					</ul>
+					<div class="containerRight">
+						<img src="img/right.png"/>
+					</div>
+				</div>
+				<script type="text/javascript">
+					new Slider("slide1");
+				</script>
+    			<section>
+    				<div class="ad-special">
+					   <ul>
+						   	<li><a href="#"><img src="img/GG (1).png"/></a></li>
+						   	<li><a href="#"><img src="img/GG (2).png"/></a></li>
+						   	<li><a href="#"><img src="img/GG (3).png"/></a></li>
+						   	<li><a href="#"><img src="img/GG (4).png"/></a></li>
+					   </ul>
+					</div>
+    				<div class="manner">
+    					<a href="#"><img src="img/manner.png"/></a>
+    				</div>
+    				<div class="pre-hot-goods">
+    					
+    					<div class="pro-hot-goodsLeft">
+    						<div class="top10pro">
+    							<h3>热门排行</h3><span>全球热卖 不容错过</span>
+    							<div class="top10pro_nav">
+    								<ul>
+    									<li><a href="#">今日热销</a></li>
+    									<li><a href="#">时尚包装</a></li>
+    									<li><a href="#">美妆个户</a></li>
+    									<li><a href="#">数码家电</a></li>
+    									<li><a href="#">保健护理</a></li>
+    									<li><a href="#">服装配饰</a></li>
+    									<li><a href="#">家居日用</a></li>
+    									<li><a href="#">母婴玩具</a></li>
+    									<li><a href="#">运动户外</a></li>
+    								</ul>
+    							</div>
+    							<div class="top10pro_navlist">
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>1,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>1,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>1,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>1,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>1,466.00</span>
+    									</div>
+    								</dl>
+    							</div>
+    							<div class="top10pro_navlist">
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>2,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>2,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>2,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>2,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>2,466.00</span>
+    									</div>
+    								</dl>
+    							</div>
+	    						<div class="top10pro_navlist">
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>3,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>3,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>3,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>3,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>3,466.00</span>
+    									</div>
+    								</dl>
+    							</div>
+								<div class="top10pro_navlist">
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 45544 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>4,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 45544 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>4,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 45544 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>4,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 45544 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>4,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>4,466.00</span>
+    									</div>
+    								</dl>
+    							</div>
+								<div class="top10pro_navlist">
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 55555 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>5,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 55555 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>5,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 55555 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>5,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 55555 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>5,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 55522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>5,466.00</span>
+    									</div>
+    								</dl>
+    							</div>
+								<div class="top10pro_navlist">
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 65566 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>6,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>6,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>6,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>6,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>6,466.00</span>
+    									</div>
+    								</dl>
+    							</div>
+								<div class="top10pro_navlist">
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 65566 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>7,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>7,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>7,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>7,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>7,466.00</span>
+    									</div>
+    								</dl>
+    							</div>
+    							<div class="top10pro_navlist">
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 65566 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>8,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>8,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>8,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>8,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>8,466.00</span>
+    									</div>
+    								</dl>
+    							</div>
+    							<div class="top10pro_navlist">
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 65566 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>9,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>9,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>9,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>9,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>9,466.00</span>
+    									</div>
+    								</dl>
+    							</div>
+    						</div>
+	    					<script type="text/javascript">
+	    						var oULlihot = document.getElementsByClassName("top10pro_nav")[0].children[0].children;
+	    						var oDl = document.getElementsByClassName("top10pro_navlist");
+	    						for(var j = 0;j<oULlihot.length;j++){
+	    							oDl[j].style.display = "none"
+	    							oDl[0].style.display = "block"
+	    							oULlihot[0].style.background="#fff"
+	    							oULlihot[0].style.borderTop="1px solid #EB5A41";
+	    							oULlihot[0].style.borderBottom="1px solid #fff";
+	    							oULlihot[0].children[0].style.color = "#EB5A41"
+	    							oULlihot[j].index = j;
+	    							
+	    							oULlihot[j].onmouseover=function(){
+	    								for(var k=0;k<oDl.length;k++){
+	    									oDl[k].style.display = "none"
+	    									oULlihot[k].style.background="#EBEBEB";
+	    									oULlihot[k].children[0].style.color = "#666"
+	    									oULlihot[k].style.borderTop="1px solid #EBEBEB";
+	    									oULlihot[k].style.borderBottom="1px solid #1A1A1A";
+	    								}
+	    								oDl[this.index].style.display = "block";
+	    								oULlihot[this.index].style.background="#fff"
+	    								oULlihot[this.index].style.borderTop="1px solid #EB5A41";
+	    								oULlihot[this.index].style.borderBottom="1px solid #fff";
+	    								oULlihot[this.index].children[0].style.color = "#EB5A41"
+	    							}
+	    						}
+	    						ajax("http://127.0.0.1/WWWxiji/lunbo/php.php?",function(data){
+										for(let f=0;f<oDl.length;f++){
+											for(let e=0;e<oDl[f].children.length;e++){
+												oDl[f].children[e].firstElementChild.firstElementChild.firstElementChild.src = JSON.parse(data).data[e].imageUrls[f+1]
+											}
+											
+										}
+									},function(){
+										console.log('服务器上没有你想要的文件');
+								})
+	    					</script>
+	    					<div class="xj_dailynew">
+	    						<h3>每日上新</h3><span>每日新品 前沿直达</span>
+	    						<div class="xj_dailynew_box"style="width: 922px;height: 345px;overflow: hidden;position: absolute;">
+	    							<div class="xj_dailynew_navlist">
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>1,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>1,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>1,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>1,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>1,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>2,466.00</span>
+    									</div>
+    								</dl>
+
+<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>2,466.00</span>
+    									</div>
+    								</dl>
+
+<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>2,466.00</span>
+    									</div>
+    								</dl>
+
+<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>2,466.00</span>
+    									</div>
+    								</dl>
+	<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>2,466.00</span>
+    									</div>
+    								</dl>
+    								
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>3,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>1,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>1,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>1,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src=""/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>1,466.00</span>
+    									</div>
+    								</dl>
+
+    							</div>
+	    						</div>
+	    					</div>
+	    					<script type="text/javascript">
+	    						var oXj_dailynew_navlist = document.getElementsByClassName("xj_dailynew_navlist")[0];
+	    						var oXj_dailynew_navlistDl = oXj_dailynew_navlist.children;
+	    						var oXj_navlistDl_lenght = oXj_dailynew_navlistDl.length;
+	    						var oXj_navlistDl_width = oXj_dailynew_navlistDl[0].offsetWidth
+	    						var nowPic = 0;
+	    						var oXj_lenght = oXj_navlistDl_lenght*oXj_navlistDl_width;
+	    						function init(){
+									if(nowPic ==0 ){
+										sport(oXj_dailynew_navlist,{left : 0 });
+									}else if(oXj_navlistDl_width*nowPic <= oXj_lenght-oXj_navlistDl_width*5){
+										sport(oXj_dailynew_navlist,{left : -oXj_navlistDl_width*nowPic});
+									}
+								}
+	    						setInterval(function(){
+	    							init();
+	    							nowPic+=5;
+	    							if(nowPic == oXj_navlistDl_lenght){
+	    								nowPic=0
+	    							}
+	    						},4000)
+	    						
+	    						ajax("http://127.0.0.1/WWWxiji/lunbo/php.php?",function(data){
+										for(let f=0;f<oXj_dailynew_navlistDl.length;f++){
+												oXj_dailynew_navlistDl[f].firstElementChild.firstElementChild.firstElementChild.src = JSON.parse(data).data[f].imageUrls[1]
+											
+											
+										}
+									},function(){
+										console.log('服务器上没有你想要的文件');
+								})
+	    						
+	    						
+	    					</script>
+    					</div>
+    					<div class="xj_store">
+    						<h3>热门排行</h3><span>全球热卖 不容错过</span>
+    						<div class="xj_store_nav">
+    								<ul>
+    									<li><a href="#">精品</a></li>
+    									<li><a href="#">促销</a></li>
+    									<li><a href="#">上新</a></li>
+    								</ul>
+    						</div>
+    						<div class="xj_store_navlist">
+    							<ul>
+    								<li>
+    									<img src="img/indeximg (1).jpg"/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src="img/indeximg (2).jpg"/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src="img/indeximg (3).jpg"/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src="img/indeximg (4).jpg"/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src="img/indeximg (5).jpg"/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src="img/indeximg (6).jpg"/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src="img/indeximg (7).jpg"/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src="img/indeximg (8).jpg"/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    							</ul>
+    						</div>
+    						<div class="xj_store_navlist">
+    							<ul>
+    								<li>
+    									<img src="img/indeximg (6).jpg"/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥240.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src="img/indeximg (1).jpg"/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥240.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src="img/indeximg (5).jpg"/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥340.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src="img/indeximg (7).jpg"/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src="img/indeximg (11).jpg"/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src="img/indeximg (8).jpg"/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src="img/indeximg (9).jpg"/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src="img/indeximg (11).jpg"/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    							</ul>
+    						</div>
+    						<div class="xj_store_navlist">
+    							<ul>
+    								<li>
+    									<img src="img/indeximg (1).jpg"/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥640.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src="img/indeximg (2).jpg"/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src="img/indeximg (3).jpg"/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src="img/indeximg (4).jpg"/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src="img/indeximg (5).jpg"/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src="img/indeximg (1).jpg"/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src="img/indeximg (6).jpg"/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    								<li>
+    									<img src="img/indeximg (1).jpg"/>
+    									<div class="xj_store_navlist_right">
+    										<a href="#">【高倍补水燕窝面膜*2盒】</a>
+    										<span></span>
+    										<div class="xj_store_jiaqian">
+    											￥140.95
+    										</div>
+    									</div>
+    								</li>
+    							</ul>
+    						</div>
+    					</div>
+    					<script type="text/javascript">
+    						var oXj_store_nav = document.getElementsByClassName("xj_store_nav")[0].children[0].children;
+	    						var ostoreDl = document.getElementsByClassName("xj_store_navlist");
+	    						for(var j = 0;j<oXj_store_nav.length;j++){
+	    							ostoreDl[j].style.display = "none"
+	    							ostoreDl[0].style.display = "block"
+	    							oXj_store_nav[0].style.background="#fff"
+	    							oXj_store_nav[0].style.borderTop="1px solid #EB5A41";
+	    							oXj_store_nav[0].style.borderBottom="1px solid #fff";
+	    							oXj_store_nav[0].children[0].style.color = "#EB5A41"
+	    							oXj_store_nav[j].index = j;
+	    							
+	    							oXj_store_nav[j].onmouseover=function(){
+	    								for(var k=0;k<ostoreDl.length;k++){
+	    									ostoreDl[k].style.display = "none"
+	    									oXj_store_nav[k].style.background="#EBEBEB";
+	    									oXj_store_nav[k].children[0].style.color = "#666"
+	    									oXj_store_nav[k].style.borderTop="1px solid #EBEBEB";
+	    									oXj_store_nav[k].style.borderBottom="1px solid #1A1A1A";
+	    								}
+	    								ostoreDl[this.index].style.display = "block";
+	    								oXj_store_nav[this.index].style.background="#fff"
+	    								oXj_store_nav[this.index].style.borderTop="1px solid #EB5A41";
+	    								oXj_store_nav[this.index].style.borderBottom="1px solid #fff";
+	    								oXj_store_nav[this.index].children[0].style.color = "#EB5A41"
+	    							}
+	    						}
+	    						
+    					</script>
+    				</div>
+    				<div class="heading-block">
+    					<a href="#">西集好物</a>
+    					<span>心动尖货 抢先拥有</span>
+    					<p><a href="#">查看更多</a></p>
+    				</div>
+    				<div class="heading_goods_box01">
+    						<div class="heading_goods_box01left">
+    							<div class="title-box">
+    								<span>最新发布</span>
+    							</div>
+    							<div class="xj_dailynew_box"style="width: 922px;height: 345px;overflow: hidden;position: absolute;">
+	    							<div class="xj_dailynew_navlist">
+	    								<dl>
+	    									<dt><a href="#"><img src="img/indeximg (1).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>3,466.00</span>
+	    									</div>
+	    								</dl>
+	    								<dl>
+	    									<dt><a href="#"><img src="img/indeximg (2).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+	    								<dl>
+	    									<dt><a href="#"><img src="img/indeximg (3).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+	    								<dl>
+	    									<dt><a href="#"><img src="img/indeximg (5).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+	    								<dl>
+	    									<dt><a href="#"><img src="img/indeximg (6).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+	    								<dl>
+	    									<dt><a href="#"><img src="img/indeximg (7).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+	    								<dl>
+	    									<dt><a href="#"><img src="img/indeximg (8).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+	    								<dl>
+	    									<dt><a href="#"><img src="img/indeximg (9).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</div>
+	    						</div>
+	    						<a href="javascript:;">prev</a>
+	    						<a href="javascript:;">next</a>
+    						</div>
+    						<div class="heading_goods_box01right">
+    							<div class="title-box">
+    								<span>家居日用</span>
+    							</div>
+    							<div class="xj_dailynew_box"style="width: 922px;height: 345px;overflow: hidden;position: absolute;">
+	    							<div class="xj_dailynew_navlist">
+	    								<dl>
+	    									<dt><a href="#"><img src="img/indeximg (7).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+	    								<dl>
+	    									<dt><a href="#"><img src="img/indeximg (8).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+	    								<dl>
+	    									<dt><a href="#"><img src="img/indeximg (9).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+	    								<dl>
+	    									<dt><a href="#"><img src=""/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+	    								<dl>
+	    									<dt><a href="#"><img src=""/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+	    								<dl>
+	    									<dt><a href="#"><img src=""/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+	    								<dl>
+	    									<dt><a href="#"><img src=""/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+	    								<dl>
+	    									<dt><a href="#"><img src=""/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</div>
+	    						</div>
+    							<a href="javascript:;">prev</a>
+	    						<a href="javascript:;">next</a>
+    						</div>
+    					</div>
+    				<div class="heading_goods_box01">
+    						<div class="heading_goods_box01left">
+    							<div class="title-box" style="background-position: 0px -110px;">
+    								<span>最新发布</span>
+    							</div>
+    							<div class="xj_dailynew_box"style="width: 922px;height: 345px;overflow: hidden;position: absolute;">
+	    							<div class="xj_dailynew_navlist">
+	    								<dl>
+	    									<dt><a href="#"><img src="img/indeximg (11).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+	    								<dl>
+	    									<dt><a href="#"><img src="img/indeximg (2).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+	    								<dl>
+	    									<dt><a href="#"><img src="img/indeximg (5).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+	    								<dl>
+	    									<dt><a href="#"><img src=""/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+	    								<dl>
+	    									<dt><a href="#"><img src=""/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+	    								<dl>
+	    									<dt><a href="#"><img src=""/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+	    								<dl>
+	    									<dt><a href="#"><img src=""/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+	    								<dl>
+	    									<dt><a href="#"><img src=""/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</div>
+	    						</div>
+	    						<a href="javascript:;">prev</a>
+	    						<a href="javascript:;">next</a>
+    						</div>
+    						<div class="heading_goods_box01right">
+    							<div class="title-box" style="background-position: 0px -165px;">
+    								<span>家居日用</span>
+    							</div>
+    							<div class="xj_dailynew_box"style="width: 922px;height: 345px;overflow: hidden;position: absolute;">
+	    							<div class="xj_dailynew_navlist">
+	    								<dl>
+	    									<dt><a href="#"><img src="img/indeximg (5).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+	    								<dl>
+	    									<dt><a href="#"><img src="img/indeximg (4).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+	    								<dl>
+	    									<dt><a href="#"><img src="img/indeximg (3).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+	    								<dl>
+	    									<dt><a href="#"><img src=""/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+	    								<dl>
+	    									<dt><a href="#"><img src=""/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+	    								<dl>
+	    									<dt><a href="#"><img src=""/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+	    								<dl>
+	    									<dt><a href="#"><img src=""/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+	    								<dl>
+	    									<dt><a href="#"><img src=""/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</div>
+	    						</div>
+    							<a href="javascript:;">prev</a>
+	    						<a href="javascript:;">next</a>
+    						</div>
+    					</div>
+    				<div class="xj_goodcomment">
+    					<div class="heading-block">
+    					<a href="#">众评好货</a>
+    					<span>大家说好 才真的好</span>
+    					<div class="content_item0">
+    						<div class="goods-box">
+    							<ul>
+    								<li class="clearfix">
+	    								<div class="tit-box">
+	    									<div class="good-innerbox">
+	    										<div class="goodcomment_tab0">
+	    											服饰钱包
+	    										</div>
+	    										<a href="#" class="goodcomment_taba">查看更多</a>
+	    										<div class="hot-box">
+	    											<ul class="txt-clearfix">
+	    												<li><a href="#" style="font-size: 14px;">双肩包</a></li>
+	    												<li><a href="#" style="font-size: 14px;">潘多拉</a></li>
+	    												<li><a href="#" style="font-size: 14px;">丝袜</a></li>
+	    												<li><a href="#" style="font-size: 14px;">钱包</a></li>
+	    												<li><a href="#" style="font-size: 14px;">童装</a></li>
+	    												<li><a href="#" style="font-size: 14px;">项链</a></li>
+	    												<li><a href="#" style="font-size: 14px;">太阳镜</a></li>
+	    											</ul>
+	    										</div>
+	    									</div>
+	    								</div>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (10).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (1).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (2).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (3).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (4).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (5).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<img src="img/tuijian.png"/>
+    								</li>
+    							</ul>
+    						</div>
+    					</div>
+    					<div class="content_item0">
+    						<div class="goods-box">
+    							<ul>
+    								<li class="clearfix" style="background: url(img/comment_img01.jpg)no-repeat;background-size: cover;">
+	    								<div class="tit-box">
+	    									<div class="good-innerbox">
+	    										<div class="goodcomment_tab0">
+	    											美妆个护
+	    										</div>
+	    										<a href="#" class="goodcomment_taba">查看更多</a>
+	    										<div class="hot-box">
+	    											<ul class="txt-clearfix">
+	    												<li><a href="#" style="font-size: 14px;">双肩包</a></li>
+	    												<li><a href="#" style="font-size: 14px;">潘多拉</a></li>
+	    												<li><a href="#" style="font-size: 14px;">丝袜</a></li>
+	    												<li><a href="#" style="font-size: 14px;">钱包</a></li>
+	    												<li><a href="#" style="font-size: 14px;">童装</a></li>
+	    												<li><a href="#" style="font-size: 14px;">项链</a></li>
+	    												<li><a href="#" style="font-size: 14px;">太阳镜</a></li>
+	    											</ul>
+	    										</div>
+	    									</div>
+	    								</div>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (10).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (1).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (2).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (3).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (4).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (5).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<img src="img/tuijian.png"/>
+    								</li>
+    							</ul>
+    						</div>
+    					</div>
+    					<div class="content_item0">
+    						<div class="goods-box">
+    							<ul>
+    								<li class="clearfix" style="background: url(img/comment_img02.jpg)no-repeat;background-size: cover;">
+	    								<div class="tit-box">
+	    									<div class="good-innerbox">
+	    										<div class="goodcomment_tab0">
+	    											家电数码
+	    										</div>
+	    										<a href="#" class="goodcomment_taba">查看更多</a>
+	    										<div class="hot-box">
+	    											<ul class="txt-clearfix">
+	    												<li><a href="#" style="font-size: 14px;">双肩包</a></li>
+	    												<li><a href="#" style="font-size: 14px;">潘多拉</a></li>
+	    												<li><a href="#" style="font-size: 14px;">丝袜</a></li>
+	    												<li><a href="#" style="font-size: 14px;">钱包</a></li>
+	    												<li><a href="#" style="font-size: 14px;">童装</a></li>
+	    												<li><a href="#" style="font-size: 14px;">项链</a></li>
+	    												<li><a href="#" style="font-size: 14px;">太阳镜</a></li>
+	    											</ul>
+	    										</div>
+	    									</div>
+	    								</div>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (10).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (8).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (7).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (6).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (3).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (2).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<img src="img/tuijian.png"/>
+    								</li>
+    							</ul>
+    						</div>
+    					</div>
+    					<div class="content_item0">
+    						<div class="goods-box">
+    							<ul>
+    								<li class="clearfix" style="background: url(img/comment_img03.jpg)no-repeat;background-size: cover;">
+	    								<div class="tit-box">
+	    									<div class="good-innerbox">
+	    										<div class="goodcomment_tab0">
+	    											家居日用
+	    										</div>
+	    										<a href="#" class="goodcomment_taba">查看更多</a>
+	    										<div class="hot-box">
+	    											<ul class="txt-clearfix">
+	    												<li><a href="#" style="font-size: 14px;">双肩包</a></li>
+	    												<li><a href="#" style="font-size: 14px;">潘多拉</a></li>
+	    												<li><a href="#" style="font-size: 14px;">丝袜</a></li>
+	    												<li><a href="#" style="font-size: 14px;">钱包</a></li>
+	    												<li><a href="#" style="font-size: 14px;">童装</a></li>
+	    												<li><a href="#" style="font-size: 14px;">项链</a></li>
+	    												<li><a href="#" style="font-size: 14px;">太阳镜</a></li>
+	    											</ul>
+	    										</div>
+	    									</div>
+	    								</div>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (10).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (1).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (2).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (3).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (4).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (5).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<img src="img/tuijian.png"/>
+    								</li>
+    							</ul>
+    						</div>
+    					</div>
+    					<div class="content_item0">
+    						<div class="goods-box">
+    							<ul>
+    								<li class="clearfix" style="background: url(img/comment_img04.jpg)no-repeat;background-size: cover;">
+	    								<div class="tit-box">
+	    									<div class="good-innerbox">
+	    										<div class="goodcomment_tab0">
+	    											保健护理
+	    										</div>
+	    										<a href="#" class="goodcomment_taba">查看更多</a>
+	    										<div class="hot-box">
+	    											<ul class="txt-clearfix">
+	    												<li><a href="#" style="font-size: 14px;">双肩包</a></li>
+	    												<li><a href="#" style="font-size: 14px;">潘多拉</a></li>
+	    												<li><a href="#" style="font-size: 14px;">丝袜</a></li>
+	    												<li><a href="#" style="font-size: 14px;">钱包</a></li>
+	    												<li><a href="#" style="font-size: 14px;">童装</a></li>
+	    												<li><a href="#" style="font-size: 14px;">项链</a></li>
+	    												<li><a href="#" style="font-size: 14px;">太阳镜</a></li>
+	    											</ul>
+	    										</div>
+	    									</div>
+	    								</div>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (1).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (6).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (5).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (3).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (2).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (1).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<img src="img/tuijian.png"/>
+    								</li>
+    							</ul>
+    						</div>
+    					</div>
+    					<div class="content_item0">
+    						<div class="goods-box">
+    							<ul>
+    								<li class="clearfix" style="background: url(img/comment_img05.jpg)no-repeat;background-size: cover;">
+	    								<div class="tit-box">
+	    									<div class="good-innerbox">
+	    										<div class="goodcomment_tab0">
+	    											食品生鲜
+	    										</div>
+	    										<a href="#" class="goodcomment_taba">查看更多</a>
+	    										<div class="hot-box">
+	    											<ul class="txt-clearfix">
+	    												<li><a href="#" style="font-size: 14px;">双肩包</a></li>
+	    												<li><a href="#" style="font-size: 14px;">潘多拉</a></li>
+	    												<li><a href="#" style="font-size: 14px;">丝袜</a></li>
+	    												<li><a href="#" style="font-size: 14px;">钱包</a></li>
+	    												<li><a href="#" style="font-size: 14px;">童装</a></li>
+	    												<li><a href="#" style="font-size: 14px;">项链</a></li>
+	    												<li><a href="#" style="font-size: 14px;">太阳镜</a></li>
+	    											</ul>
+	    										</div>
+	    									</div>
+	    								</div>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (10).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (1).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (2).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (3).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (4).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (5).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<img src="img/tuijian.png"/>
+    								</li>
+    							</ul>
+    						</div>
+    					</div>
+    					<div class="content_item0">
+    						<div class="goods-box">
+    							<ul>
+    								<li class="clearfix" style="background: url(img/comment_img08.jpg)no-repeat;background-size: cover;">
+	    								<div class="tit-box">
+	    									<div class="good-innerbox">
+	    										<div class="goodcomment_tab0">
+	    											运动户外
+	    										</div>
+	    										<a href="#" class="goodcomment_taba">查看更多</a>
+	    										<div class="hot-box">
+	    											<ul class="txt-clearfix">
+	    												<li><a href="#" style="font-size: 14px;">双肩包</a></li>
+	    												<li><a href="#" style="font-size: 14px;">潘多拉</a></li>
+	    												<li><a href="#" style="font-size: 14px;">丝袜</a></li>
+	    												<li><a href="#" style="font-size: 14px;">钱包</a></li>
+	    												<li><a href="#" style="font-size: 14px;">童装</a></li>
+	    												<li><a href="#" style="font-size: 14px;">项链</a></li>
+	    												<li><a href="#" style="font-size: 14px;">太阳镜</a></li>
+	    											</ul>
+	    										</div>
+	    									</div>
+	    								</div>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (10).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (1).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (2).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (3).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (4).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (5).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<img src="img/tuijian.png"/>
+    								</li>
+    							</ul>
+    						</div>
+    					</div>
+    					<div class="content_item0">
+    						<div class="goods-box">
+    							<ul>
+    								<li class="clearfix" style="background: url(img/comment_img07.jpg)no-repeat;background-size: cover;">
+	    								<div class="tit-box">
+	    									<div class="good-innerbox">
+	    										<div class="goodcomment_tab0">
+	    											母婴玩具
+	    										</div>
+	    										<a href="#" class="goodcomment_taba">查看更多</a>
+	    										<div class="hot-box">
+	    											<ul class="txt-clearfix">
+	    												<li><a href="#" style="font-size: 14px;">双肩包</a></li>
+	    												<li><a href="#" style="font-size: 14px;">潘多拉</a></li>
+	    												<li><a href="#" style="font-size: 14px;">丝袜</a></li>
+	    												<li><a href="#" style="font-size: 14px;">钱包</a></li>
+	    												<li><a href="#" style="font-size: 14px;">童装</a></li>
+	    												<li><a href="#" style="font-size: 14px;">项链</a></li>
+	    												<li><a href="#" style="font-size: 14px;">太阳镜</a></li>
+	    											</ul>
+	    										</div>
+	    									</div>
+	    								</div>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (10).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (1).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (2).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (3).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (4).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<dl>
+	    									<dt><a href="#"><img src="img/indeximg (5).jpg"/></a></dt>
+	    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+	    									<div class="tag-box"></div>
+	    									<div class="maneyyuan">
+	    										<span>$</span>
+	    										<span>1,466.00</span>
+	    									</div>
+	    								</dl>
+    								</li>
+    								<li>
+    									<img src="img/tuijian.png"/>
+    								</li>
+    							</ul>
+    						</div>
+    					</div>
+    				</div>
+    				</div>
+    				<div class="heading-block">
+    					<a href="#">猜你喜欢</a>
+    					<span>为您甄选 专属好物</span>
+    				</div>
+    				<div class="guBoxInner">
+    								<dl>
+    									<dt><a href="#"><img src="img/indeximg (4).jpg"/></a></dt>
+    									<div class="dlBox">
+    										<div class="tit-box">
+    											身体乳专场
+    										</div>
+    										<div class="txt-box">
+    											滚蛋吧！粗糙肌
+    										</div>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src="img/indeximg (1).jpg"/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>9,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src="img/indeximg (5).jpg"/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>9,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src="img/indeximg (6).jpg"/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>9,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src="img/indeximg (7).jpg"/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>9,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src="img/indeximg (8).jpg"/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>9,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src="img/indeximg (9).jpg"/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 65566 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>9,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src="img/indeximg (10).jpg"/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>9,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src="img/indeximg (11).jpg"/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>9,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src="img/indeximg (2).jpg"/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>9,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src="img/indeximg (4).jpg"/></a></dt>
+    									<dd><a href="#"><img src="img/Chinnaicon.jpg.png"/>【行走的时尚】Patagonia 巴塔哥尼亚 Better 1/4 Zip 男士立领抓绒套头衫 25522 多尺码多色可选</a></dd>
+    									<div class="tag-box"></div>
+    									<div class="maneyyuan">
+    										<span>$</span>
+    										<span>9,466.00</span>
+    									</div>
+    								</dl>
+    								<dl>
+    									<dt><a href="#"><img src="img/indeximg (5).jpg"/></a></dt>
+    									<div class="dlBox">
+    										<div class="tit-box">
+    											身体乳专场
+    										</div>
+    										<div class="txt-box">
+    											滚蛋吧！粗糙肌
+    										</div>
+    									</div>
+    								</dl>
+    				</div>
+    			</section>
+			</div>
+		</div>	
+		<div class="Footer">
+			
+	
+			<footer>
+					<div class="info-footer-inner">
+						<div class="left-box">
+							<dl>
+								<dt>购物指南</dt>
+								<dd><a href="#">购物下单</a></dd>
+								<dd><a href="#">关税清关</a></dd>
+								<dd><a href="#">站内优惠</a></dd>
+								<dd><a href="#">积分说明</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="#">物流配送</a></dt>
+								<dd><a href="#">购物下单</a></dd>
+								<dd><a href="#">购物下单</a></dd>
+								<dd><a href="#">积分说明</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="#">售后服务</a></dt>
+								<dd><a href="#">购物下单</a></dd>
+								<dd><a href="#">购物下单</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="#">常见问题</a></dt>
+								<dd><a href="#">购物下单</a></dd>
+								<dd><a href="#">积分说明</a></dd>
+							</dl>
+							<dl>
+								<dt><a href="#">关于我们</a></dt>
+								<dd><a href="#">关税清关</a></dd>
+								<dd><a href="#">站内优惠</a></dd>
+								<dd><a href="#">积分说明</a></dd>
+								<dd><a href="#">关税清关</a></dd>
+								<dd><a href="#">站内优惠</a></dd>
+								<dd><a href="#">积分说明</a></dd>
+								<dd><a href="#">关税清关</a></dd>
+								<dd><a href="#">站内优惠</a></dd>
+							</dl>
+							
+						</div>
+						<div class="create-rightbox">
+							<div class="tit-box">
+								海外运营中心
+							</div>
+							<p>香港运营中心:<img src="http://img2.helper-sys.com/themes/ecstore/images/index_161107/mail_serive_hk_170526.png"/></p>
+							<p>北美运营中心:<img src="http://img2.helper-sys.com/themes/ecstore/images/index_161107/mail_serive_hk_170526.png"/></p>
+							<p>日本运营中心：<img src="http://img2.helper-sys.com/themes/ecstore/images/index_161107/mail_serive_hk_170526.png"/></p>
+							<p>欧洲运营中心：<img src="http://img2.helper-sys.com/themes/ecstore/images/index_161107/mail_serive_hk_170526.png"/></p>
+							<p>香港运营中心:<img src="http://img2.helper-sys.com/themes/ecstore/images/index_161107/mail_serive_hk_170526.png"/></p>
+							
+							<div class="tit-box2">
+								中国大陆运营中心
+							</div>
+							<p>在线客服:<img src="http://img2.helper-sys.com/themes/ecstore/images/index_161107/mail_serive_hk_170526.png"/></p>
+							<p>客服热线:<img src="http://img2.helper-sys.com/themes/ecstore/images/index_161107/mail_serive_hk_170526.png"/></p>
+							<p>工作时间：<img src="http://img2.helper-sys.com/themes/ecstore/images/index_161107/mail_serive_hk_170526.png"/></p>
+							
+						</div>
+						<div class="right-box">
+								<p>扫码下载客户端</p>
+								<a href="#"><img src="img/app_download.png"/></a>
+						</div>
+					</div>
+					
+				</footer>
+				</div>	
+				<div class="Footer-bottom">
+				<div class="footer-box">
+					<div class="footer-inner">
+						<p>Copyright © 2017 XIJI Hongkong Co., Ltd xiji.com 保留一切权利。 京ICP备14062442号 | </p>
+						<p>
+							<a href="#"><img src="http://img3.helper-sys.com//image/6ca43cb489eb3cd581037f57bb2fb1dee9414022.gif?1465144001#w"/></a>
+							<a href="#"><img src="http://img2.helper-sys.com//image/547b48b9c16dbc00ac8163259c326f7ae7bf2cf3.gif?1465143405#w"/></a>
+							<a href="#"><img src="http://img1.helper-sys.com//image/694508.png?1425468231#w"/></a>
+							<a href="#"><img src="http://img1.helper-sys.com//image/a77f0a.png?1425468249#w"/></a>
+						</p>
+					</div>
+				</div>
+				</div>	
+	</div>
+	</body>
+</html>

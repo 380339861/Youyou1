@@ -1,0 +1,116 @@
+body {
+  padding-top: 4%;
+  background-color: #F5F5F5; }
+  body .sigup {
+    width: 542px;
+    height: 752px;
+    margin: 0 auto;
+    background: #FFFFFF url(../img/passport_bg_161124.png) 0 0 no-repeat;
+    border: 1px solid #d8d8d8; }
+    body .sigup .signin-page-wrap {
+      background: none;
+      margin: 0;
+      padding: 0;
+      height: 350px; }
+      body .sigup .signin-page-wrap ul {
+        margin-top: 80px; }
+        body .sigup .signin-page-wrap ul li {
+          float: left;
+          width: 50%;
+          height: 45px;
+          background: #F7F7F7;
+          text-align: center;
+          line-height: 45px; }
+          body .sigup .signin-page-wrap ul li span {
+            display: inline-block;
+            line-height: 44px;
+            border-bottom: 1px solid #fff;
+            font-size: 19px;
+            text-align: center;
+            cursor: pointer; }
+      body .sigup .signin-page-wrap .signup-article {
+        width: 350px;
+        float: none;
+        padding: 100px 0 0 95px;
+        background: none;
+        border: none;
+        margin-left: -360px;
+        margin-left: 0; }
+        body .sigup .signin-page-wrap .signup-article h3 {
+          position: absolute;
+          top: 35px; }
+        body .sigup .signin-page-wrap .signup-article .chinaUserContent form {
+          position: relative; }
+          body .sigup .signin-page-wrap .signup-article .chinaUserContent form input:nth-of-type(1), body .sigup .signin-page-wrap .signup-article .chinaUserContent form input:nth-of-type(3) {
+            width: 326px;
+            height: 45px;
+            border: 1px solid #d8d8d8;
+            margin: 20px 0 10px 0;
+            padding-left: 30px; }
+          body .sigup .signin-page-wrap .signup-article .chinaUserContent form .inputnone {
+            width: 150px;
+            height: 45px;
+            border: 1px solid #d8d8d8;
+            padding-left: 20px;
+            display: none; }
+          body .sigup .signin-page-wrap .signup-article .chinaUserContent form .sigupiphone {
+            display: none; }
+          body .sigup .signin-page-wrap .signup-article .chinaUserContent form span {
+            display: none;
+            float: right;
+            margin-top: 10px; }
+            body .sigup .signin-page-wrap .signup-article .chinaUserContent form span span {
+              text-align: center;
+              width: 140px;
+              font-size: 12px;
+              line-height: 47px;
+              padding: 0 5px;
+              background-color: #fff;
+              border-radius: 3px;
+              border: 1px solid #eb5a41;
+              color: #eb5a41;
+              padding: 0 0;
+              margin-left: 10px;
+              cursor: pointer;
+              display: none; }
+          body .sigup .signin-page-wrap .signup-article .chinaUserContent form span:nth-of-type(2) {
+            width: 350px;
+            height: 20px;
+            display: block;
+            margin: 20px 0 10px 0; }
+            body .sigup .signin-page-wrap .signup-article .chinaUserContent form span:nth-of-type(2) input {
+              float: left;
+              width: 20px;
+              height: 20px;
+              margin: 0;
+              border: 1px solid #F5F5F5; }
+            body .sigup .signin-page-wrap .signup-article .chinaUserContent form span:nth-of-type(2) label {
+              float: left;
+              margin-left: 5px;
+              margin-right: 15px;
+              vertical-align: middle; }
+            body .sigup .signin-page-wrap .signup-article .chinaUserContent form span:nth-of-type(2) a {
+              margin-left: 3px;
+              margin-right: 3px;
+              color: #0563c3;
+              cursor: pointer;
+              float: right; }
+          body .sigup .signin-page-wrap .signup-article .chinaUserContent form input:nth-of-type(4), body .sigup .signin-page-wrap .signup-article .chinaUserContent form input:nth-of-type(5) {
+            width: 350px;
+            height: 50px;
+            background: #EB5A41;
+            border: 0;
+            border-radius: 3px;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            line-height: 40px;
+            margin-top: 20px; }
+          body .sigup .signin-page-wrap .signup-article .chinaUserContent form input:nth-of-type(5) {
+            color: #EB5A41;
+            border: 1px solid #EB5A41;
+            background: white; }
+
+#siguppasswordiphone {
+  width: 120px;
+  float: left; }

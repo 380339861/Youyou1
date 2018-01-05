@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+		<script type="text/javascript" src="js/cookie.js" ></script>
+		<script type="text/javascript" src="js/login.js" ></script>
+	</head>
+	<body>
+		<div class="sigup">
+			<div class="signin-page-wrap">
+					<ul>
+						<li><span>账号密码登录</span></li>
+						<li><span>手机快捷登录</span></li>
+					</ul>
+				
+				<div class="signup-article">
+					<div class="chinaUserContent">
+						<form action="" method="post">
+							<input type="text" name="" id="username" value="" placeholder="请输入手机号/用户名/邮箱" class="siguptxt" />
+							<input type="text" name="" id="" value="" placeholder="请输入密码" class="sigupiphone" />
+							<span><span class="sigupduan">获取短信验证码</span></span>
+							<input type="text" name="" id="password" value="" placeholder="请输入密码" class="siguppassword"  class="inputnone"/>
+							<span>
+								<input type="checkbox" name="" id="" value="" checked="checked"/>
+								<label for="">记住账号</label>
+								<input type="checkbox" name="" id="" value="" checked="checked"/>
+								<label for="">两周免登陆</label><a href="#">?忘记密码</a>
+							</span>
+							<input type="button" name="" id="login" value="登   录" />
+							<input type="button" name="" id="goRegister" value="30秒注册" />
+						</form>
+					</div>
+				</div>
+				
+				<div class="signup-article">
+					<div class="chinaUserContent">
+						<form action="" method="post">
+							<input type="text" name="" id="" value="" placeholder="请输入手机号" class="siguptxt" />
+							<h3>+86</h3>
+							<input type="text" name="" id="" value="" placeholder="请输入验证码" class="sigupiphone" />
+							
+							<input type="text" name="" id="siguppasswordiphone" value="" placeholder="请输入验证码" class="siguppasswordiphone"  class="inputnone" />
+							<span style="display: block;padding: 0;"><span style="display: block; class="sigupduan">获取短信验证码</span></span>
+							<span>
+								<input type="checkbox" name="" id="" value="" checked="checked"/>
+								<label for="">记住账号</label>
+								<input type="checkbox" name="" id="" value="" checked="checked"/>
+								<label for="">两周免登陆</label><a href="#">?忘记密码</a>
+							</span>
+							<input type="button" name="" id="" value="登   录" />
+						</form>
+					</div>
+				</div>
+				
+				
+				
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+//		切换卡
+		var oLoginULli = document.getElementsByClassName("signin-page-wrap")[0].children[0].children;
+		var oLoginUL = document.getElementsByClassName("signup-article")
+		for(var p=0;p<oLoginULli.length;p++){
+					oLoginULli[0].style.color = "#eb5a41";
+		          	oLoginULli[0].children[0].style.borderBottomColor = "#eb5a41";
+		          	oLoginULli[0].style.background = "#fff"
+		          	oLoginUL[p].style.display="none"
+		          	oLoginUL[0].style.display="block"
+		          	oLoginULli[p].index = p;
+				oLoginULli[p].onclick = function(){
+					for(var o=0;o<oLoginULli.length;o++){
+						oLoginULli[o].style.color = "#000";
+		         	 	oLoginULli[o].children[0].style.borderBottomColor = "#F5F5F5";
+		         	 	oLoginULli[o].style.background = "#F5F5F5"
+		         	 	oLoginUL[o].style.display = "none"
+					}
+					this.style.color = "#eb5a41";
+		          	this.children[0].style.borderBottomColor = "#eb5a41";
+		          	this.style.background = "#fff"
+		          	oLoginUL[this.index].style.display="block"
+				}
+		}
+		
+		<!--//得焦变色-->
+		function Clickinput(classname){
+			var Classname = document.getElementsByClassName(classname)[0];
+			Classname.onfocus = function(){
+				Classname.style.border = "1px solid #f89416"
+			}
+			Classname.onblur = function(){
+				Classname.style.border = "1px solid #d8d8d8"
+			}
+		}
+		Clickinput("siguptxt")
+		Clickinput("sigupiphone")
+		Clickinput("sigupduan")
+		Clickinput("siguppassword")
+	</script>
+</html>
